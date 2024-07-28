@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>org.example</groupId>
+    <artifactId>MyWork</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.3.6.RELEASE</version>
+    </parent>
+
+
+    <properties>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+    <dependencies>
+<!--&lt;!&ndash;        springcloud&ndash;&gt;-->
+<!--        <dependency>-->
+<!--            <groupId>org.springframework.cloud</groupId>-->
+<!--            <artifactId>spring-cloud-dependencies</artifactId>-->
+<!--            <version>2023.0.0</version>-->
+<!--        </dependency>-->
+        <!--mybatis-plus 持久层-->
+        <dependency>
+            <groupId>com.baomidou</groupId>
+            <artifactId>mybatis-plus-boot-starter</artifactId>
+            <version>3.4.1</version>
+        </dependency>
+        <!--mysql-->
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>8.0.30</version>
+        </dependency>
+        <!--knife4j-->
+        <dependency>
+            <groupId>com.github.xiaoymin</groupId>
+            <artifactId>knife4j-spring-boot-starter</artifactId>
+            <version>3.0.3</version>
+        </dependency>
+        <!--jjwt-->
+        <dependency>
+            <groupId>io.jsonwebtoken</groupId>
+            <artifactId>jjwt</artifactId>
+            <version>0.9.1</version>
+        </dependency>
+    <!--lombok-->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.20</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter</artifactId>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-starter-logging</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-log4j2</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-security</artifactId>
+        </dependency>
+        <!--knife4j-->
+        <dependency>
+            <groupId>com.github.xiaoymin</groupId>
+            <artifactId>knife4j-spring-boot-starter</artifactId>
+            <version>3.0.3</version>
+        </dependency>
+        <!--redis-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-redis</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.redisson</groupId>
+            <artifactId>redisson</artifactId>
+            <version>3.32.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+            <version>2.0.21</version>
+        </dependency>
+
+        <dependency>
+            <groupId>cn.hutool</groupId>
+            <artifactId>hutool-all</artifactId>
+            <version>5.8.22</version>
+        </dependency>
+
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+            <version>4.0.1</version>
+        </dependency>
+    </dependencies>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
+<!--
+<dependencyManagement>
+        <dependencies>
+            <!-springboot 3.2.0-->
+<!--    <dependency>-->
+<!--        <groupId>org.springframework.boot</groupId>-->
+<!--        <artifactId>spring-boot-starter-parent</artifactId>-->
+<!--        <version>${spring.boot.version}</version>-->
+<!--        <type>pom</type>-->
+<!--        <scope>import</scope>-->
+<!--    </dependency>-->
+<!--    &lt;!&ndash;springcloud 2023.0.0&ndash;&gt;-->
+<!--    <dependency>-->
+<!--        <groupId>org.springframework.cloud</groupId>-->
+<!--        <artifactId>spring-cloud-dependencies</artifactId>-->
+<!--        <version>${spring.cloud.version}</version>-->
+<!--        <type>pom</type>-->
+<!--        <scope>import</scope>-->
+<!--    </dependency>-->
+<!--    &lt;!&ndash;springcloud alibaba 2022.0.0.0-RC2&ndash;&gt;-->
+<!--    <dependency>-->
+<!--        <groupId>com.alibaba.cloud</groupId>-->
+<!--        <artifactId>spring-cloud-alibaba-dependencies</artifactId>-->
+<!--        <version>${spring.cloud.alibaba.version}</version>-->
+<!--        <type>pom</type>-->
+<!--        <scope>import</scope>-->
+<!--    </dependency>-->
+<!--    &lt;!&ndash;SpringBoot集成mybatis&ndash;&gt;-->
+<!--    <dependency>-->
+<!--        <groupId>org.mybatis.spring.boot</groupId>-->
+<!--        <artifactId>mybatis-spring-boot-starter</artifactId>-->
+<!--        <version>${mybatis.springboot.version}</version>-->
+<!--    </dependency>-->
+<!--    &lt;!&ndash;Mysql数据库驱动8 &ndash;&gt;-->
+<!--    <dependency>-->
+<!--        <groupId>mysql</groupId>-->
+<!--        <artifactId>mysql-connector-java</artifactId>-->
+<!--        <version>${mysql.version}</version>-->
+<!--    </dependency>-->
+<!--    &lt;!&ndash;SpringBoot集成druid连接池&ndash;&gt;-->
+<!--    <dependency>-->
+<!--        <groupId>com.alibaba</groupId>-->
+<!--        <artifactId>druid-spring-boot-starter</artifactId>-->
+<!--        <version>${druid.version}</version>-->
+<!--    </dependency>-->
+<!--    &lt;!&ndash;通用Mapper4之tk.mybatis&ndash;&gt;-->
+<!--    <dependency>-->
+<!--        <groupId>tk.mybatis</groupId>-->
+<!--        <artifactId>mapper</artifactId>-->
+<!--        <version>${mapper.version}</version>-->
+<!--    </dependency>-->
+<!--    &lt;!&ndash;persistence&ndash;&gt;-->
+<!--    <dependency>-->
+<!--        <groupId>javax.persistence</groupId>-->
+<!--        <artifactId>persistence-api</artifactId>-->
+<!--        <version>${persistence-api.version}</version>-->
+<!--    </dependency>-->
+<!--    &lt;!&ndash; fastjson2 &ndash;&gt;-->
+<!--    <dependency>-->
+<!--        <groupId>com.alibaba.fastjson2</groupId>-->
+<!--        <artifactId>fastjson2</artifactId>-->
+<!--        <version>${fastjson2.version}</version>-->
+<!--    </dependency>-->
+<!--    &lt;!&ndash; swagger3 调用方式 http://你的主机IP地址:5555/swagger-ui/index.html &ndash;&gt;-->
+<!--    <dependency>-->
+<!--        <groupId>org.springdoc</groupId>-->
+<!--        <artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>-->
+<!--        <version>${swagger3.version}</version>-->
+<!--    </dependency>-->
+<!--    &lt;!&ndash;hutool&ndash;&gt;-->
+<!--    <dependency>-->
+<!--        <groupId>cn.hutool</groupId>-->
+<!--        <artifactId>hutool-all</artifactId>-->
+<!--        <version>${hutool.version}</version>-->
+<!--    </dependency>-->
+<!--    &lt;!&ndash;lombok&ndash;&gt;-->
+<!--    <dependency>-->
+<!--        <groupId>org.projectlombok</groupId>-->
+<!--        <artifactId>lombok</artifactId>-->
+<!--        <version>${lombok.version}</version>-->
+<!--        <optional>true</optional>-->
+<!--    </dependency>-->
+<!--    &lt;!&ndash; spring-boot-starter-test &ndash;&gt;-->
+<!--    <dependency>-->
+<!--        <groupId>org.springframework.boot</groupId>-->
+<!--        <artifactId>spring-boot-starter-test</artifactId>-->
+<!--        <version>${spring.boot.test.version}</version>-->
+<!--        <scope>test</scope>-->
+<!--    </dependency>-->
+<!--</dependencies>-->
+<!--        </dependencyManagement>-->
+<!--    <build>-->
+<!--        <resources>-->
+<!--            <resource>-->
+<!--                <directory>src/main/java</directory>-->
+<!--                <includes>-->
+<!--                    <include>**/*.xml</include>-->
+<!--                </includes>-->
+<!--                <filtering>true</filtering>-->
+<!--            </resource>-->
+
+<!--        </resources>-->
+<!--    </build>-->
+</project>
